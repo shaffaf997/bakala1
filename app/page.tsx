@@ -108,9 +108,9 @@ const workflowSteps = [
 ];
 
 const heroKpis = [
-  ["42", "Independent stores", "Live in Lusail"],
-  ["90+", "Live SKUs", "Across categories"],
-  ["18 min", "Avg. fulfillment time", "From order to door"],
+  ["25–40 stores", "Pilot target", "Pilot assumption"],
+  ["90+ SKUs", "Demo catalog", "Prototype scope"],
+  ["15–20 min", "Target ETA", "Short-radius pilot"],
 ];
 
 const bakalaComparison = [
@@ -125,6 +125,13 @@ const marketplaceComparison = [
   "Platform controls inventory view",
   "Platform owns customer relationship",
   "Platform controls fulfillment",
+];
+
+const snoonuFit = [
+  "Expands grocery reach",
+  "Supports independent merchants",
+  "Creates low-cost neighborhood fulfillment",
+  "Validates repeat local ordering",
 ];
 
 const problemCards = [
@@ -162,16 +169,23 @@ const deliveryRules = [
 ];
 
 const revenueStreams = [
-  "Store subscription: QAR 199-399/month",
-  "Small platform fee: QAR 1-2 per order",
-  "Delivery margin only when backup fulfillment is used",
-  "Avoid heavy percentage commission because baqala margins are small",
+  "Potential store subscription: QAR 199–399/month after pilot validation",
+  "Optional platform fee: QAR 1–2 per successful order",
+  "Backup delivery margin only when third-party fulfillment is used",
+  "No heavy commission model because baqala margins are small",
+];
+
+const pilotNeeds = [
+  "Merchant onboarding support for 15–25 baqalas",
+  "Guidance on payments, dispatch, and order flow",
+  "Pilot support in one dense Qatar zone",
+  "Data support to validate repeat orders and unit economics",
 ];
 
 const pilotPlan = [
   "Start in one dense area such as Lusail, Najma, or Al Sadd",
-  "Onboard 15-25 stores",
-  "Start with 300-800 high-moving SKUs per store",
+  "Onboard 15–25 stores",
+  "Start with 300–800 high-moving SKUs per store",
   "Keep delivery radius short",
   "Measure stock accuracy, order completion, delivery cost, and repeat orders",
 ];
@@ -180,6 +194,14 @@ const whyNow = [
   "Qatar customers are already used to ordering through apps.",
   "Many neighborhood stores are still under-digitized.",
   "Price-sensitive customers need lower-cost hyperlocal options.",
+];
+
+const currentProgress = [
+  "Working clickable prototype deployed",
+  "Customer, store, delivery, and admin flow designed",
+  "Pilot model defined for Lusail-first launch",
+  "Unit economics model prepared",
+  "Demo catalog and order flow created",
 ];
 
 export default function Home() {
@@ -381,14 +403,16 @@ export default function Home() {
             <p className="inline-flex rounded-full border border-emerald-900/10 bg-white/80 px-3.5 py-2 text-[11px] font-black uppercase tracking-[0.16em] text-emerald-800 shadow-sm">
               Qatar quick-commerce prototype
             </p>
-            <h1 className="mt-5 max-w-3xl text-5xl font-black leading-[0.9] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
-              Order from nearby bakalas
-              <span className="block text-emerald-800">with live stock.</span>
+            <h1 className="mt-5 max-w-3xl text-4xl font-black leading-[0.95] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+              Digitizing Qatar’s neighborhood groceries with
+              <span className="block text-emerald-800">
+                live stock and store-owned delivery.
+              </span>
             </h1>
             <p className="mt-5 max-w-2xl text-base font-semibold leading-7 text-slate-700 sm:text-lg">
-              Customers order from nearby stores. Stores stay independent.
-              Delivery is handled by store riders first, with backup only when
-              needed.
+              Bakala Connect helps independent baqalas receive online orders
+              without losing pricing control, customer ownership, or delivery
+              independence.
             </p>
 
             <div className="mt-5 grid gap-2 sm:grid-cols-3">
@@ -720,6 +744,20 @@ export default function Home() {
             </div>
           </PitchSection>
 
+          <PitchSection
+            eyebrow="Snoonu Startup Factory fit"
+            title="Why this fits Snoonu"
+            description="Bakala Connect can help Snoonu extend deeper into neighborhood grocery demand without forcing every small store into a heavy marketplace model. The concept creates a lighter merchant layer where baqalas manage live stock, store-owned fulfillment, and nearby repeat customers, while Snoonu can support infrastructure, payments, dispatch, and scale."
+          >
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {snoonuFit.map((item, index) => (
+                <PitchCard key={item} marker={`0${index + 1}`} compact>
+                  {item}
+                </PitchCard>
+              ))}
+            </div>
+          </PitchSection>
+
           <div className="grid gap-5 lg:grid-cols-2">
             <PitchSection
               eyebrow="Built for stores"
@@ -789,12 +827,38 @@ export default function Home() {
             </PitchSection>
 
             <PitchSection
+              eyebrow="What we need to pilot"
+              title="A focused launch with the right operating support."
+              description="The concept is ready for a small controlled test with selected merchants, tight delivery radius, and clear measurement."
+            >
+              <div className="grid gap-2 sm:grid-cols-2">
+                {pilotNeeds.map((item) => (
+                  <PitchListItem key={item}>{item}</PitchListItem>
+                ))}
+              </div>
+            </PitchSection>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-[1.1fr_1fr]">
+            <PitchSection
               eyebrow="Pilot strategy"
               title="Launch dense, measure unit economics, then expand."
               description="The first pilot should prove stock accuracy, reliable fulfillment, and repeat ordering in a short-radius area."
             >
               <div className="grid gap-2 sm:grid-cols-2">
                 {pilotPlan.map((item) => (
+                  <PitchListItem key={item}>{item}</PitchListItem>
+                ))}
+              </div>
+            </PitchSection>
+
+            <PitchSection
+              eyebrow="Current progress"
+              title="Built enough to evaluate the pilot concept."
+              description="The prototype is designed to show the core customer, merchant, delivery, and admin logic without claiming live market traction."
+            >
+              <div className="space-y-2">
+                {currentProgress.map((item) => (
                   <PitchListItem key={item}>{item}</PitchListItem>
                 ))}
               </div>
@@ -833,12 +897,34 @@ export default function Home() {
 
               <ComparisonCard
                 badge="TM"
-                title="Traditional marketplace"
-                subtitle="Centralized platform model"
+                title="Standard marketplace model"
+                subtitle="Stronger central control, higher operating complexity, and less flexibility for small independent stores."
                 items={marketplaceComparison}
               />
             </div>
           </PitchSection>
+
+          <section className="rounded-[1.75rem] border border-emerald-900/10 bg-slate-950 p-5 text-white shadow-xl shadow-amber-900/10 sm:p-6">
+            <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-yellow-200">
+                  Next step
+                </p>
+                <h2 className="mt-2 text-3xl font-black tracking-tight">
+                  Ready for a focused pilot
+                </h2>
+                <p className="mt-2 max-w-3xl text-sm font-semibold leading-6 text-slate-300">
+                  The next step is a small controlled pilot with selected
+                  baqalas in one dense area, measuring stock accuracy, order
+                  completion, fulfillment cost, repeat orders, and customer
+                  satisfaction.
+                </p>
+              </div>
+              <div className="w-fit rounded-full bg-yellow-300 px-4 py-2 text-sm font-black text-slate-950 shadow-sm">
+                Pilot-ready concept demo
+              </div>
+            </div>
+          </section>
         </section>
 
         <footer className="border-t border-slate-200 py-6 text-sm text-slate-600">
