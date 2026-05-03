@@ -121,10 +121,10 @@ const bakalaComparison = [
 ];
 
 const marketplaceComparison = [
-  "Platform controls pricing",
-  "Platform controls inventory view",
-  "Platform owns customer relationship",
-  "Platform controls fulfillment",
+  "More centralized pricing structure",
+  "Platform-led inventory visibility",
+  "Platform-centered customer relationship",
+  "Centralized fulfillment workflow",
 ];
 
 const snoonuFit = [
@@ -185,7 +185,7 @@ const pilotNeeds = [
 const pilotPlan = [
   "Start in one dense area such as Lusail, Najma, or Al Sadd",
   "Onboard 15–25 stores",
-  "Start with 300–800 high-moving SKUs per store",
+  "Start with 100–300 core high-moving SKUs before expanding the catalog",
   "Keep delivery radius short",
   "Measure stock accuracy, order completion, delivery cost, and repeat orders",
 ];
@@ -390,7 +390,7 @@ export default function Home() {
             </div>
           </div>
           <div className="rounded-full border border-emerald-900/10 bg-emerald-50 px-3 py-1.5 text-xs font-black text-emerald-800 sm:px-4 sm:py-2 sm:text-sm">
-            Live in Lusail
+            Prototype: Lusail-first launch
           </div>
         </header>
 
@@ -485,7 +485,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap items-center gap-1.5">
                   <div className="rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-black text-emerald-800 ring-1 ring-emerald-700/10">
-                      Online
+                      Demo online
                   </div>
                   <OrderStatusBadge status={orderStatus} compact tone="soft" />
                   <button
@@ -570,7 +570,7 @@ export default function Home() {
                     </p>
                     <div className="mt-2 flex flex-wrap gap-2">
                       <div className="rounded-full bg-emerald-400 px-3 py-1 text-xs font-bold text-emerald-950">
-                        Online
+                        Demo online
                       </div>
                       <OrderStatusBadge status={orderStatus} />
                     </div>
@@ -923,6 +923,9 @@ export default function Home() {
               <div className="w-fit rounded-full bg-yellow-300 px-4 py-2 text-sm font-black text-slate-950 shadow-sm">
                 Pilot-ready concept demo
               </div>
+              <p className="text-sm font-semibold text-slate-300 lg:text-right">
+                Built to validate demand before scaling operations.
+              </p>
             </div>
           </section>
         </section>
