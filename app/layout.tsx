@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bakala Connect | Qatar Hyperlocal Grocery Demo",
   description:
-    "Live demo for a Qatar hyperlocal grocery platform helping independent baqalas sell online with live stock and store-owned delivery.",
+    "A live concept demo for digitizing Qatar’s neighborhood baqalas with live stock and store-owned delivery.",
 };
 
 export default function RootLayout({

@@ -108,9 +108,9 @@ const workflowSteps = [
 ];
 
 const heroKpis = [
-  ["25–40 stores", "Pilot target", "Pilot assumption"],
-  ["90+ SKUs", "Demo catalog", "Prototype scope"],
-  ["15–20 min", "Target ETA", "Short-radius pilot"],
+  ["Pilot target", "25–40 stores", "Pilot assumption"],
+  ["Demo catalog", "90+ SKUs", "Prototype scope"],
+  ["Target ETA", "15–20 min", "Short-radius pilot"],
 ];
 
 const bakalaComparison = [
@@ -455,18 +455,18 @@ export default function Home() {
             </div>
 
             <div className="mt-4 grid max-w-2xl gap-2 sm:grid-cols-3">
-              {heroKpis.map(([value, title, detail]) => (
+              {heroKpis.map(([title, value, detail]) => (
                 <div
                   key={title}
                   className="rounded-2xl border border-white/70 bg-white/80 px-3 py-2.5 shadow-sm shadow-amber-900/5"
                 >
-                  <p className="text-2xl font-black leading-none text-slate-950">
-                    {value}
-                  </p>
-                  <p className="mt-1.5 text-xs font-black text-emerald-800">
+                  <p className="text-[11px] font-black uppercase tracking-[0.12em] text-emerald-800">
                     {title}
                   </p>
-                  <p className="mt-0.5 text-[11px] font-semibold leading-4 text-slate-500">
+                  <p className="mt-1 text-2xl font-black leading-none text-slate-950">
+                    {value}
+                  </p>
+                  <p className="mt-1 text-[11px] font-semibold leading-4 text-slate-500">
                     {detail}
                   </p>
                 </div>
